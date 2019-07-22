@@ -25,9 +25,9 @@ def motor_off(pin):
 if __name__ == '__main__':
     try:
         motor_on(motor1)
-        time.sleep(1)
+        time.sleep(2)
         motor_off(motor1)
-        time.sleep(1)
+        time.sleep(2)
         motor_on(motor2)
         time.sleep(1)
         motor_off(motor2)
