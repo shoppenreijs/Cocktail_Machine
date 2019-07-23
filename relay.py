@@ -22,12 +22,16 @@ def motor_off(pin):
 
 try:
     motor_on(motor1)
+    print('motor1 high')
     time.sleep(2)
     motor_off(motor1)
+    print('motor1 low')
     time.sleep(2)
     motor_on(motor2)
+    print('motor2 high')
     time.sleep(1)
     motor_off(motor2)
+    print('motor2 low')
     time.sleep(1)
     GPIO.cleanup()
 except KeyboardInterrupt:
