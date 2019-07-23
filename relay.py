@@ -13,11 +13,11 @@ GPIO.setup(motor_list, GPIO.OUT)
 
 
 def motor_on(pin):
-    GPIO.output(pin, GPIO.LOW)  # Turn motor on
+    GPIO.output(pin, GPIO.HIGH)  # Turn motor on
 
 
 def motor_off(pin):
-    GPIO.output(pin, GPIO.HIGH)  # Turn motor off
+    GPIO.output(pin, GPIO.LOW)  # Turn motor off
 
 
 try:
