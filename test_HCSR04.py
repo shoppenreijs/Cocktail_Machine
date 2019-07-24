@@ -5,6 +5,9 @@ def read_distance ():
         
       TRIG = 23
       ECHO = 24
+      GPIO.setmode(GPIO.BCM)                   #Set GPIO pin numbering
+      GPIO.setup(TRIG,GPIO.OUT, initial=False)      #Set pin TRIG as GPIO out and value LOW
+      GPIO.setup(ECHO,GPIO.IN)                      #Set pin ECHO as GPIO in
       GPIO.output(TRIG, True)                  #Set TRIG as HIGH
       time.sleep(0.00001)                      #Delay of 0.00001 seconds
       GPIO.output(TRIG, False)                 #Set TRIG as LOW
