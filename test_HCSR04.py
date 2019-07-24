@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO                    #Import GPIO library
 import time                                #Import time library
 
-def read_distance ( self, idx ):
+def read_distance ():
         
       TRIG = 23
       ECHO = 24
@@ -24,3 +24,5 @@ def read_distance ( self, idx ):
         print("Distance:",distance - 0.5,"cm")  #Print distance with 0.5 cm calibration
       else:
         print("Out Of Range") 
+        
+read_distance()
