@@ -22,20 +22,20 @@ pumps = PumpRelay( pump_ch )
 #stock_amount = Stock_Sensor( HC_SR04_ch )
 
 ## Test pumps
-pumps.motor_on( pump_ch(1) )
+pumps.motor_on( pump_ch[1] )
 time.sleep(4)
-pumps.motor_off( pump_ch(1) )
+pumps.motor_off( pump_ch[1] )
 
-pumps.motor_on( pump_ch(2) )
+pumps.motor_on( pump_ch[2] )
 time.sleep(4)
-pumps.motor_off( pump_ch(2) )
+pumps.motor_off( pump_ch[2] )
 
-pumps.motor_on( pump_ch(3) )
+pumps.motor_on( pump_ch[3] )
 time.sleep(4)
-pumps.motor_off( pump_ch(3) )
+pumps.motor_off( pump_ch[3] )
 
-pumps.motor_on( pump_ch(4) )
+pumps.motor_on( pump_ch[4] )
 time.sleep(4)
-pumps.motor_off( pump_ch(4) )
+pumps.motor_off( pump_ch[4] )
 
 GPIO.cleanup() 
