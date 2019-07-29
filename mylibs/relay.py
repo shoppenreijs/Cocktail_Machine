@@ -8,7 +8,7 @@ class PumpRelay:
     
         self.pump = pump_ch
         GPIO.setmode( GPIO.BCM )
-        GPIO.setup( pump_ch, GPIO.OUT, GPIO.HIGH )
+        GPIO.setup( pump_ch, GPIO.OUT, initial=GPIO.HIGH )
     
     
     def motor_on( pin ):
