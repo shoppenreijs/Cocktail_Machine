@@ -43,23 +43,25 @@ class Stock_Sensor:
       distance = round(distance, 3)            #Round to two decimal points
     
       if distance > 2 and distance < 400:      #Check whether the distance is within range
-        print("Distance:",distance - 0.5,"cm")  #Print distance with 0.5 cm calibration
+        print("Distance:",distance - 0.5,"cm") #Print distance with 0.5 cm calibration
       else:
         print("Out Of Range")                   #display out of range
         
-      self.reset_sensor(TRIG)
+      self.reset_sensor( TRIG ) 
       
       return distance
         
-    def reset_sensor (self, TRIG):
+    def reset_sensor ( self, TRIG ):
         GPIO.output(TRIG, False)
         
-    def calc_volume (self, idx ):
+    def calc_volume ( self, idx ):
         diameter = 0.075    # [m]
         area = math.pi * diameter
         height = self.read_distance()
         volume = area * abs( height - self.init_distance_list[idx] )
         
         #hier oplette dat initial distance list bijgewerkt wordt als de juiste hoeveelheid volume is verpompt. 
+        self.init_distance_list( idx ) = height
+        
         return volume
         

@@ -15,25 +15,24 @@ from mylibs.cocktail_gen import Cocktail_Generator
 cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
 pump_ch = [21, 20, 16, 26]                              #Relay channels
 HC_SR04_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
-pump_control = PumpRelay( pump_ch )
-stock_amount = HC_SR04( HC_SR04_ch )
+pumps = PumpRelay( pump_ch )
+stock_amount = Stock_Sensor( HC_SR04_ch )
 
+## Test pumps
+pumps.motor_on( pump_ch(1) )
+time.sleep(4)
+pumps.motor_off( pump_ch(1) )
 
-    
-    
-    try:
-        motor_on(motor1)
-        print('motor1 on')
-        time.sleep(2)
-        motor_off(motor1)
-        print('motor1 off')
-        time.sleep(2)
-        motor_on(motor2)
-        print('motor2 on')
-        time.sleep(1)
-        motor_off(motor2)
-        print('motor2 off')
-        time.sleep(1)
-        GPIO.cleanup()
-    except KeyboardInterrupt:
-        GPIO.cleanup()
+pumps.motor_on( pump_ch(2) )
+time.sleep(4)
+pumps.motor_off( pump_ch(2) )
+
+pumps.motor_on( pump_ch(3) )
+time.sleep(4)
+pumps.motor_off( pump_ch(3) )
+
+pumps.motor_on( pump_ch(4) )
+time.sleep(4)
+pumps.motor_off( pump_ch(4) )
+
+GPIO.cleanup() 
