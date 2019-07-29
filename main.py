@@ -7,10 +7,13 @@ Created on Wed Jul 24 10:32:40 2019
 """
 
 import RPi.GPIO as GPIO                    
-import time                                
-from mylibs.relay import PumpRelay
-from mylibs.HC_SR04 import Stock_Sensor
-from mylibs.cocktail_gen import Cocktail_Generator
+import time
+import sys
+
+sys.path.insert(0, '/home/pi/Cocktail_Machine/mylibs')                                
+from relay import PumpRelay
+from HC_SR04 import Stock_Sensor
+from cocktail_gen import Cocktail_Generator
 
 cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
 pump_ch = [21, 20, 16, 26]                              #Relay channels
