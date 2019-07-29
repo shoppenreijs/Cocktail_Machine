@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 class Cocktail_Generator:
     def __init__ (self, cocktail_name, volume):

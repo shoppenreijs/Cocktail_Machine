@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import RPi.GPIO as GPIO                    #Import GPIO library
 import time                                #Import time library
 
