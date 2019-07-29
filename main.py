@@ -8,7 +8,7 @@ Created on Wed Jul 24 10:32:40 2019
 
 import RPi.GPIO as GPIO                    
 import time                                
-from mylibs.relay.py import PumpRelay
+from mylibs.relay import PumpRelay
 from mylibs.HC_SR04 import Stock_Sensor
 from mylibs.cocktail_gen import Cocktail_Generator
 
