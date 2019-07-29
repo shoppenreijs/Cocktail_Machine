@@ -13,9 +13,9 @@ import sys
 sys.path.insert(0, '/home/pi/Cocktail_Machine/mylibs')                                
 from relay import PumpRelay
 #from HC_SR04 import Stock_Sensor
-from cocktail_gen import Cocktail_Generator
+#from cocktail_gen import Cocktail_Generator
 
-cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
+#cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
 pump_ch = [21, 20, 16, 26]                              #Relay channels
 HC_SR04_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
 pumps = PumpRelay( pump_ch )
