@@ -15,15 +15,15 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(pump_ch, GPIO.OUT, initial=GPIO.HIGH)
 
 GPIO.output(pump_ch[1], GPIO.LOW)
-time.sleep(2)
+time.sleep(10)
 GPIO.output(pump_ch[1], GPIO.HIGH)
 
 GPIO.output(pump_ch[2], GPIO.LOW)
-time.sleep(2)
+time.sleep(10)
 GPIO.output(pump_ch[2], GPIO.HIGH)
 
 GPIO.output(pump_ch[3], GPIO.LOW)
-time.sleep(2)
+time.sleep(10)
 GPIO.output(pump_ch[3], GPIO.HIGH)
 
 GPIO.cleanup()
