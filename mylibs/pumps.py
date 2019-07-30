@@ -8,7 +8,7 @@ Created on Tue Jul 30 19:25:42 2019
 
 import RPi.GPIO as GPIO
 
-class Pumps:
+class Pump_relay:
     
     def __init__ ( self, pump_ch ):
     

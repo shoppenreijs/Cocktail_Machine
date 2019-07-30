@@ -12,45 +12,49 @@ import sys
 
 sys.path.insert(0, '/home/pi/Cocktail_Machine/mylibs')                                
 #from relay import PumpRelay
-from pumps import Pumps
-#from HC_SR04 import Stock_Sensor
+from pumps import Pump_relay
+from HC_SR04 import Stock_sensor
 #from cocktail_gen import Cocktail_Generator
 
 #cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
+
+## define input/output channels
 pump_ch = [21, 20, 16, 26]                              #Relay channels
+stock_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
 
-HC_SR04_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
-#pumps = PumpRelay( pump_ch )
-#stock_amount = Stock_Sensor( HC_SR04_ch )
-
-pump1 = Pumps( pump_ch[1] )
- 
-
+## initialize pumps
 pumps = []
-for i in pump_ch:
-    pump = Pumps( i )
+for idx in pump_ch:
+    pump = Pump_relay( idx )
     pumps.append( pump )
+ 
+## initialize HC_SR04 sensors
+stock = []
+for idx in stock_ch:
+    single_stock = Stock_sensor( idx )
+    stock.append( single_stock )
     
+## Test stock sensors
+print( stock[0].read_distance() ) 
 
 ## Test pumps
 pumps[0].on()
 time.sleep(4)
 pumps[0].off()    
     
-pump1.on()
+pumps[1].on()
 time.sleep(4)
-pump1.off()
+pumps[1].off() 
 
-#pumps.motor_on( pump_ch[2] )
-#time.sleep(4)
-#pumps.motor_off( pump_ch[2] )
-#
-#pumps.motor_on( pump_ch[3] )
-#time.sleep(4)
-#pumps.motor_off( pump_ch[3] )
-#
-#pumps.motor_on( pump_ch[4] )
-#time.sleep(4)
-#pumps.motor_off( pump_ch[4] )
+pumps[2].on()
+time.sleep(4)
+pumps[2].off()
+ 
+pumps[3].on()
+time.sleep(4)
+pumps[3].off()
+
+## Test stock sensors
+print( stock[0].read_distance() ) 
 
 GPIO.cleanup() 
