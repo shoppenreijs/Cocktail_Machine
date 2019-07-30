@@ -47,11 +47,21 @@ print( stock[0].read_distance() )
 #print( stock[3].read_distance() ) 
 
 ## Test pumps
-for i in pumps:
-    pumps[i].on()
-    time.sleep(4)
-    pumps[i].off()    
+pumps[0].on()
+time.sleep(4)
+pumps[0].off()    
     
+pumps[1].on()
+time.sleep(4)
+pumps[1].off() 
+
+pumps[2].on()
+time.sleep(4)
+pumps[2].off()
+ 
+pumps[3].on()
+time.sleep(4)
+pumps[3].off()
 
 ## Ending GPIO
 GPIO.cleanup() 
