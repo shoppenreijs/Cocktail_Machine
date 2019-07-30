@@ -30,6 +30,7 @@ class Stock_sensor:
     def initialize_height ( self ):
         
         self.init_height = self.read_distance()  #Read out initial distance
+        print(self.init_height)
     
     ## Readout stock height
     #
