@@ -21,7 +21,7 @@ class Stock_sensor:
 
         GPIO.setup( self.TRIG, GPIO.OUT, initial=False )      #Set pin TRIG as GPIO out and value LOW
         GPIO.setup( self.ECHO, GPIO.IN )                      #Set pin ECHO as GPIO in
-        self.init_height = self.read_distance()      #Read out initial distance
+        self.init_height = 1 #self.read_distance()      #Read out initial distance
 
 
     def read_distance ( self ):
