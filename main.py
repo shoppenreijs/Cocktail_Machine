@@ -35,7 +35,7 @@ for idx in stock_ch:
     stock.append( single_stock )
     
 ## Test stock sensors
-print( stock[0].read_distance() ) 
+#print( stock[0].read_distance() ) 
 
 ## Test pumps
 pumps[0].on()
@@ -53,8 +53,5 @@ pumps[2].off()
 pumps[3].on()
 time.sleep(4)
 pumps[3].off()
-
-## Test stock sensors
-print( stock[0].read_distance() ) 
 
 GPIO.cleanup() 
