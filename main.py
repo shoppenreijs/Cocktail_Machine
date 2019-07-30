@@ -39,6 +39,7 @@ for idx in stock_ch:
 #    stock[idx].initialize_height()    
 
 stock[0].initialize_height()
+time.sleep(4)
 ## Test stock sensors
 print( stock[0].read_distance() ) 
 #print( stock[1].read_distance() ) 
