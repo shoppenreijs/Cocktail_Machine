@@ -18,13 +18,25 @@ from pumps import Pumps
 
 #cocktail = Cocktail_Generator( cocktail_name = 'mix1', volume = 0.1 )
 pump_ch = [21, 20, 16, 26]                              #Relay channels
+
 HC_SR04_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
 #pumps = PumpRelay( pump_ch )
 #stock_amount = Stock_Sensor( HC_SR04_ch )
 
 pump1 = Pumps( pump_ch[1] )
+ 
+
+pumps = []
+for i in pump_ch:
+    pump = Pumps( i )
+    pumps.append( pump )
+    
 
 ## Test pumps
+pumps[0].on()
+time.sleep(4)
+pumps[0].off()    
+    
 pump1.on()
 time.sleep(4)
 pump1.off()
