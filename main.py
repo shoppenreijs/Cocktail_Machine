@@ -34,9 +34,9 @@ for idx in stock_ch:
     single_stock = Stock_sensor( idx )
     stock.append( single_stock )
 
-## initialize stock height
-for idx in range( len(stock) ):
-    stock[idx].initialize_height()    
+### initialize stock height
+#for idx in range( len(stock) ):
+#    stock[idx].initialize_height()    
     
 ## Test stock sensors
 print( stock[0].read_distance() ) 
