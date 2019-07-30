@@ -33,13 +33,16 @@ stock = []
 for idx in stock_ch:
     single_stock = Stock_sensor( idx )
     stock.append( single_stock )
-    stock[idx].initialize_height()
+
+## initialize stock height
+for idx in range( len(stock) ):
+    stock[idx].initialize_height()    
     
 ## Test stock sensors
 print( stock[0].read_distance() ) 
-print( stock[1].read_distance() ) 
-print( stock[2].read_distance() ) 
-print( stock[3].read_distance() ) 
+#print( stock[1].read_distance() ) 
+#print( stock[2].read_distance() ) 
+#print( stock[3].read_distance() ) 
 
 ## Test pumps
 pumps[0].on()
