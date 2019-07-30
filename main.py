@@ -33,9 +33,13 @@ stock = []
 for idx in stock_ch:
     single_stock = Stock_sensor( idx )
     stock.append( single_stock )
+    stock[idx].initialize_height()
     
 ## Test stock sensors
 print( stock[0].read_distance() ) 
+print( stock[1].read_distance() ) 
+print( stock[2].read_distance() ) 
+print( stock[3].read_distance() ) 
 
 ## Test pumps
 pumps[0].on()
@@ -54,4 +58,5 @@ pumps[3].on()
 time.sleep(4)
 pumps[3].off()
 
+## Ending GPIO
 GPIO.cleanup() 
