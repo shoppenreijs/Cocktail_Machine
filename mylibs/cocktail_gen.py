@@ -21,7 +21,7 @@ class Cocktail_Generator:
             print("Your cocktail will be prepared!")
             ct_composition = []
             for i in self.mixtures:
-                ct_composition.append( self.volume * self.mixtures[self.ct_name] )
+                ct_composition.append( self.volume * self.mixtures[self.ct_name][i] )
                 self.ct_composition = ct_composition
             
         else:
