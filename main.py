@@ -85,14 +85,14 @@ def brew_cocktail ( cocktail_name, volume=100 ):
         pumps[2].off()
         time.sleep( pump_times[0] - pump_times[2] )   #self.pumptimes[i])
         pumps[0].off()
-    if pump_times[4] != 0 and  pump_times[2] != 0:
-        pumps[4].on()
-        pumps[2].on()
-        time.sleep( pump_times[2] )
-        pumps[2].off()
-        time.sleep( pump_times[4] - pump_times[2] )   #self.pumptimes[i])
-        pumps[4].off()
-    if pump_times[2] != 0 and  pump_times[3] == 0 and pump_times[1] == 0 and pump_times[0] == 0:
+    if pump_times[3] != 0 and  pump_times[1] != 0:
+        pumps[3].on()
+        pumps[1].on()
+        time.sleep( pump_times[1] )
+        pumps[1].off()
+        time.sleep( pump_times[3] - pump_times[1] )   #self.pumptimes[i])
+        pumps[3].off()
+    if pump_times[2] != 0 and (pump_times[3] == 0 and pump_times[1] == 0 and pump_times[0] == 0):
                 
         pumps[2].on()
         time.sleep( pump_times[2] )
