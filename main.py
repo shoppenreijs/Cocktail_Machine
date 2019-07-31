@@ -45,6 +45,11 @@ print('check0')
 stock[1].initialize_height()
 print('check1')
 
+for i in range(len(pump_ch)):
+    pumps[i].on()
+    time.sleep(5)   #self.pumptimes[i])
+    pumps[i].off()
+
 try:
     print("Enter your cocktail (woap/baap/wowa/ba):")
     cocktail_name = str(input())
