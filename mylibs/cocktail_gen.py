@@ -4,7 +4,7 @@ class Cocktail_Generator:
     def __init__ (self, cocktail_name, volume, pumps):
         
         self.volume = volume
-        self.ct_name = cocktail_name
+        self.ct_name = str(cocktail_name)
         self.pumps = pumps
         
         # percentage liquid of total volume
