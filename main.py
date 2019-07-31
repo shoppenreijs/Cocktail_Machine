@@ -39,7 +39,7 @@ for idx in stock_ch:
 #for idx in range( len(stock) ):
 #    stock[idx].initialize_height()    
 
-stock[2].initialize_height()
+stock[3].initialize_height()
 print('check1')
 
 
