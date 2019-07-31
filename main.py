@@ -33,12 +33,13 @@ stock = []
 for idx in stock_ch:
     single_stock = Stock_sensor( idx )
     stock.append( single_stock )
+    print(stock)
 
 ### initialize stock height
 #for idx in range( len(stock) ):
 #    stock[idx].initialize_height()    
 
-stock[1].initialize_height()
+stock[2].initialize_height()
 print('check1')
 
 
