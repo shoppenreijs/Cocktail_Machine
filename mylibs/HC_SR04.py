@@ -16,7 +16,7 @@ class Stock_sensor:
     def __init__ ( self, HC_SR04_ch ):
         
         GPIO.setmode( GPIO.BCM )                          #Set GPIO pin numbering 
-        
+    
         self.TRIG = HC_SR04_ch[0]
         self.ECHO = HC_SR04_ch[1]
         self.init_distance_list = []
