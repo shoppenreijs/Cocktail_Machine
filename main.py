@@ -51,18 +51,18 @@ print('check1')
 #    pumps[i].on()
 #    time.sleep(5)   #self.pumptimes[i])
 #    pumps[i].off()
-
-pumps[0].on()
-pumps[1].on()
-time.sleep(120)
-pumps[0].off()
-pumps[1].off()
-
-pumps[2].on()
-pumps[3].on()
-time.sleep(180)
-pumps[2].off()
-pumps[3].off()
+#
+#pumps[0].on()
+#pumps[1].on()
+#time.sleep(120)
+#pumps[0].off()
+#pumps[1].off()
+#
+#pumps[2].on()
+#pumps[3].on()
+#time.sleep(180)
+#pumps[2].off()
+#pumps[3].off()
 
 
 
