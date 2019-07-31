@@ -15,7 +15,7 @@ class Pump_relay:
         self.pin = pump_ch
         GPIO.setmode( GPIO.BCM )
         GPIO.setup( pump_ch, GPIO.OUT, initial=GPIO.HIGH )
-    
+
     
     def on( self ):
         GPIO.output( self.pin, GPIO.LOW)  # Turn motor on

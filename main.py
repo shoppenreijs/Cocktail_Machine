@@ -17,7 +17,7 @@ from pumps import Pump_relay
 from HC_SR04 import Stock_sensor
 from programs import clean_motors
 from cocktail_gen import Cocktail_Generator
-from SubscribeCloudMQTT import *
+#from SubscribeCloudMQTT import *
 
 ## define input/output channels
 pump_ch = [21, 20, 16, 26]                              #Relay channels
@@ -64,8 +64,6 @@ print('check1')
 #pumps[2].off()
 #pumps[3].off()
 
-
-
 def brew_cocktail ( cocktail_name, volume ):
     print(cocktail_name)
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
@@ -78,6 +76,35 @@ def brew_cocktail ( cocktail_name, volume ):
                 pumps[i].off()
     
     GPIO.cleanup()
+ 
+def on_connect(client, userdata, flags, rc):
+    client.subscribe("cocktailsknallen")
+    
+def on_message(client, userdata, message):
+    print("Message received: "  + str(message.payload.decode("utf-8")))
+    brew_cocktail(str(message.payload.decode("utf-8")), 100)    
+
+
+Connected = False   #global variable for the state of the connection
+ 
+broker_address= "m24.cloudmqtt.com"  #Broker address
+port = 10552                         #Broker port
+user = "xvgfmnhm"                    #Connection username
+password = "YD2yAN5wS9_U"            #Connection password
+ 
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.on_message= on_message                      #attach function to callback
+ 
+client.connect(broker_address, port=port)          #connect to broker
+ 
+client.loop_forever()        #start the loop
+ 
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
+
+
 
 
 
