@@ -40,12 +40,13 @@ class Cocktail_Generator:
     def make_cocktail( self ):
         self.cocktail_composition()
         self.pump_time()
+        return self.pump_times
         
-        for i in range(len(self.pump_times)):
-            if self.pump_times[i] != 0:
-                self.pumps[i].on()
-                time.sleep(5)   #self.pumptimes[i])
-                self.pumps[i].off()
+#        for i in range(len(self.pump_times)):
+#            if self.pump_times[i] != 0:
+#                self.pumps[i].on()
+#                time.sleep(5)   #self.pumptimes[i])
+#                self.pumps[i].off()
         
         
         

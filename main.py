@@ -45,10 +45,10 @@ print('check0')
 stock[1].initialize_height()
 print('check1')
 
-for i in range(len(pump_ch)):
-    pumps[i].on()
-    time.sleep(5)   #self.pumptimes[i])
-    pumps[i].off()
+#for i in range(len(pump_ch)):
+#    pumps[i].on()
+#    time.sleep(5)   #self.pumptimes[i])
+#    pumps[i].off()
 
 try:
     print("Enter your cocktail (woap/baap/wowa/ba):")
@@ -56,7 +56,14 @@ try:
     print("Enter cocktail volume [ml]")
     volume = input()
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
-    cocktail.make_cocktail()
+    pump_times = cocktail.make_cocktail()
+    
+    for i in range(len(pump_times)):
+            if pump_times[i] != 0:
+                pumps[i].on()
+                time.sleep( pump_times[i] )   #self.pumptimes[i])
+                pumps[i].off()
+    
     GPIO.cleanup()
 
 ## Test pumps
