@@ -39,8 +39,11 @@ for idx in stock_ch:
 #for idx in range( len(stock) ):
 #    stock[idx].initialize_height()    
 
-stock[3].initialize_height()
-print('check1')
+stock[0].initialize_height()
+print('check0')
+stock[2].initialize_height()
+print('check2')
+
 
 
 ## Test stock sensors
