@@ -19,14 +19,16 @@ class Cocktail_Generator:
 
         if self.cocktail_name in self.mixtures:
             print("Your cocktail will be prepared!")
+            ct_composition = []
+            for i in self.mixtures:
+                ct_composition.append( self.volume * self.mixtures['self.ct_name'] )
+                self.ct_composition = ct_composition
+            
         else:
             print("This cocktail is not aviable, please choose anonther one")
             return
         
-        ct_composition = []
-        for i in self.mixtures:
-            ct_composition.append( self.volume * self.mixtures['self.ct_name'] )
-        self.ct_composition = ct_composition
+        
             
     def pump_time( self ):
         
