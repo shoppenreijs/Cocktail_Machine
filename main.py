@@ -64,7 +64,7 @@ print('check1')
 #pumps[2].off()
 #pumps[3].off()
 
-def brew_cocktail ( cocktail_name, volume ):
+def brew_cocktail ( cocktail_name, volume=100 ):
     print(cocktail_name)
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
     pump_times = cocktail.make_cocktail()
@@ -75,7 +75,7 @@ def brew_cocktail ( cocktail_name, volume ):
                 time.sleep( pump_times[i] )   #self.pumptimes[i])
                 pumps[i].off()
     
-    GPIO.cleanup()
+    
  
 def on_connect(client, userdata, flags, rc):
     client.subscribe("cocktailsknallen")
