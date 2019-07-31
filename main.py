@@ -19,7 +19,7 @@ from cocktail_gen import Cocktail_Generator
 
 ## define input/output channels
 pump_ch = [21, 20, 16, 26]                              #Relay channels
-stock_ch = [[27,22], [23, 24], [17, 18], [13,19]]     #[TRIG, ECHO] sensor pair
+stock_ch = [[27,22], [23, 24]]#, [17, 18], [13,19]]     #[TRIG, ECHO] sensor pair
 
 ## initialize pumps
 pumps = []
