@@ -41,7 +41,7 @@ for idx in stock_ch:
 
 stock[0].initialize_height()
 print('check0')
-stock[1].initialize_height()
+stock[3].initialize_height()
 print('check2')
 
 
