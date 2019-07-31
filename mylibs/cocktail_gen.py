@@ -17,7 +17,7 @@ class Cocktail_Generator:
         
     def cocktail_composition ( self ):
 
-        if self.cocktail_name in self.mixtures:
+        if self.ct_name in self.mixtures:
             print("Your cocktail will be prepared!")
             ct_composition = []
             for i in self.mixtures:
