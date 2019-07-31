@@ -46,8 +46,10 @@ stock[1].initialize_height()
 print('check1')
 
 try:
-    cocktail_name = input("Enter your cocktail: woap/baap/wowa/ba")  
-    volume = input("Enter cocktail volume [ml]")
+    print("Enter your cocktail (woap/baap/wowa/ba):")
+    cocktail_name = input()  
+    print("Enter cocktail volume [ml]")
+    volume = input()
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
     cocktail.make_cocktail()
     GPIO.cleanup()
