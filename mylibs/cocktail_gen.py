@@ -34,6 +34,7 @@ class Cocktail_Generator:
         
         speed = 350/240 #ml/sec
         self.pump_times = [i * speed for i in self.ct_composition]
+        print(self.pump_times)
 
     
     def make_cocktail( self ):
