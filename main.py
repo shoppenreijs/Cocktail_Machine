@@ -56,9 +56,9 @@ print('check1')
 #print( stock[3].read_distance() ) 
 
 ## Test pumps
-pumps[3].on()
-time.sleep(240)
-pumps[3].off()    
+pumps[0].on()
+time.sleep(40)
+pumps[0].off()    
     
 #pumps[1].on()
 #time.sleep(4)
