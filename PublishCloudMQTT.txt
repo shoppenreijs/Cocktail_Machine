@@ -1,0 +1,47 @@
+#import class to have access to all functionality needs to connect to the broker
+#to publish massages to topics, time is imported to introduce delays in code
+
+import paho.mqtt.client as mqttClient
+import time
+import datetime
+
+
+def on_connect(client, userdata, flags, rc):
+    if rc == 0:
+        #print("Connected to broker")
+        global Connected                #Use global variable
+        Connected = True                #Signal connection 
+ 
+    else:
+        print("Connection failed")
+
+Connected = False   #global variable for the state of the connection
+    
+broker_address= "m24.cloudmqtt.com"
+port = 10552
+user = "xvgfmnhm"
+password = "YD2yAN5wS9_U"
+ 
+client = mqttClient.Client("Python")               #create new instance
+client.username_pw_set(user, password=password)    #set username and password
+client.on_connect= on_connect                      #attach function to callback
+client.connect(broker_address, port=port)          #connect to broker
+ 
+client.loop_start()        #start the loop
+ 
+while Connected != True:    #Wait for connection
+    time.sleep(0.1)
+    
+try:
+    while True:
+        value = str(datetime.datetime.now())
+        client.publish("beunsessie3",value, retain=False) 
+        time.sleep(30)
+        
+except KeyboardInterrupt:
+    print("exiting")
+    client.disconnect()
+    client.loop_stop()
+    
+#SOURCE:
+#https://techtutorialsx.com/2017/04/14/python-publishing-messages-to-mqtt-topic/
