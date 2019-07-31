@@ -21,6 +21,7 @@ def clean_motors ( pumps ):
     time.sleep(40)
     pumps[2].off()
     pumps[3].off()
+
     
 
     
