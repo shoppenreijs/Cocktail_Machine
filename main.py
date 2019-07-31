@@ -20,7 +20,7 @@ from HC_SR04 import Stock_sensor
 
 ## define input/output channels
 pump_ch = [21, 20, 16, 26]                              #Relay channels
-stock_ch = [[23, 24], [17, 18], [27,22], [13,19]]     #[TRIG, ECHO] sensor pair
+stock_ch = [[27,22], [23, 24], [17, 18], [13,19]]     #[TRIG, ECHO] sensor pair
 
 ## initialize pumps
 pumps = []
@@ -41,10 +41,8 @@ for idx in stock_ch:
 
 stock[0].initialize_height()
 print('check0')
-stock[2].initialize_height()
-print('check2')
 stock[1].initialize_height()
-print('check1')
+print('check2')
 
 
 
