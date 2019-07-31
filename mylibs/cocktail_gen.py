@@ -42,9 +42,10 @@ class Cocktail_Generator:
         self.pump_time()
         
         for i in range(len(self.pump_times)):
-            self.pumps[i].on()
-            time.sleep(self.pumptime[i])
-            self.pumps[i].off()
+            if self.pump_time[i] != 0:
+                self.pumps[i].on()
+                time.sleep(self.pumptime[i])
+                self.pumps[i].off()
         
         
         
