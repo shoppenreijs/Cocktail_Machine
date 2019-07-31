@@ -67,6 +67,7 @@ print('check1')
 
 
 def brew_cocktail ( cocktail_name, volume ):
+    print(cocktail_name)
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
     pump_times = cocktail.make_cocktail()
     
