@@ -41,7 +41,7 @@ for idx in stock_ch:
 
 stock[0].initialize_height()
 print('check0')
-stock[2].initialize_height()
+stock[1].initialize_height()
 print('check1')
 #stock[2].initialize_height()
 #print('check2')
@@ -57,20 +57,20 @@ print('check1')
 
 ## Test pumps
 pumps[0].on()
-time.sleep(4)
+time.sleep(120)
 pumps[0].off()    
     
-pumps[1].on()
-time.sleep(4)
-pumps[1].off() 
-
-pumps[2].on()
-time.sleep(4)
-pumps[2].off()
- 
-pumps[3].on()
-time.sleep(4)
-pumps[3].off()
+#pumps[1].on()
+#time.sleep(4)
+#pumps[1].off() 
+#
+#pumps[2].on()
+#time.sleep(4)
+#pumps[2].off()
+# 
+#pumps[3].on()
+#time.sleep(4)
+#pumps[3].off()
 
 ## Ending GPIO
 GPIO.cleanup() 
