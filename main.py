@@ -47,7 +47,7 @@ print('check1')
 
 try:
     print("Enter your cocktail (woap/baap/wowa/ba):")
-    cocktail_name = input()  
+    cocktail_name = str(input())
     print("Enter cocktail volume [ml]")
     volume = input()
     cocktail = Cocktail_Generator( cocktail_name, volume, pumps )
