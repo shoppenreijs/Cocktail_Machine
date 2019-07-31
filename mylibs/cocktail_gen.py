@@ -13,7 +13,7 @@ class Cocktail_Generator:
         wowa = [0, 0.3, 0, 0.7]
         ba = [0, 0, 0.33, 0]
         
-        self.mixtures = dict(woap, baap, wowa, ba)
+        self.mixtures = {'woap' : woap, 'baap' : baap, 'wowa' : wowa, 'ba': ba }
         
     def cocktail_composition ( self ):
 
@@ -21,7 +21,7 @@ class Cocktail_Generator:
             print("Your cocktail will be prepared!")
             ct_composition = []
             for i in self.mixtures:
-                ct_composition.append( self.volume * self.mixtures['self.ct_name'] )
+                ct_composition.append( self.volume * self.mixtures[self.ct_name] )
                 self.ct_composition = ct_composition
             
         else:
