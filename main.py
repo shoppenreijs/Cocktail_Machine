@@ -74,6 +74,8 @@ def brew_cocktail ( cocktail_name, volume=100 ):
                 pumps[i].on()
                 time.sleep( pump_times[i] )   #self.pumptimes[i])
                 pumps[i].off()
+                
+    print('Enjoy your cocktail!')
     
     
  
