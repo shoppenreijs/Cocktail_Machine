@@ -57,13 +57,10 @@ print('check1')
 
 ## Test pumps
 pumps[0].on()
-pumps[1].on()
-pumps[2].on()
-#pumps[3].on()
 time.sleep(60)
 pumps[0].off()   
-pumps[1].off()
-pumps[2].off()
+
+#pumps[2].off()
 #pumps[3].off() 
     
 #pumps[1].on()
